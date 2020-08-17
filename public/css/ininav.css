@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.navback{
+    background-color: #0061bd;
+}
+.navbar{
+    padding: 0px !important;
+}
+.navbar-brand{
+    padding: 0px !important;
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+}
+.toroFit{
+    color: white !important;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 5px;
+    
+}
+a{
+    color: white ;
+    font-size: 20px;
+    padding: 10px;
+}
+.nav-actions{
+    margin-right: 10%;
+}
+a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+.dropdown-icon{
+    font-size: 34px !important;
+    color: #37d500;
+}
+.button-drop{
+    margin-right: 10%;
+}
+.btn-buscar{
+    background-color: #30c000 !important;
+    color: white !important;
+    margin-left: 5px;
+}
+.btn-buscar:hover{
+    background-color: #37d500 !important;
+}
+.hover-weight:hover{
+    transition: 0.5s;
+    font-weight: bold !important;
+}
+@media only screen and (max-width: 550px) {
+    .toroFit{
+        display: none;
+    }
+    a{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 770px){
+    .form-resp{
+        display: block !important;
+    }
+    .btn-buscar{
+        width: 95% !important;
+        margin-left: 2.5%;
+        margin-top: 1% ;
+    }
+    .buscar-resp{
+        width: 95% !important;
+        margin-left: 2.5% !important;
+    }
+    .drop-resp{
+        text-align: center !important;
+    }
+    .drop-resp-usu{
+        display: block !important;
+        margin-right: 0px !important;
+        text-align: center;
+    }
+}

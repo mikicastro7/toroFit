@@ -1,0 +1,130 @@
+
+h1{
+    text-align: center;
+    background-color: #0787ffa6;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.filtre-button{
+    padding: 5px 25px;
+    color: white;
+    background-color: #0787ffa6;
+    border: 2px solid #044d92;
+    
+    
+}
+.filtre-button:hover{
+    background-color: #0073dfd3;
+}
+.assessors{
+    margin-top: 20px;
+}
+.assessor{
+    background-color: white;
+    border: 1px solid #0787ff2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.img-perf{
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #0787ff2c;
+}
+.usu-data{
+    text-align: center !important;
+    padding: 0px;
+}
+.descrip{
+    border-left: 1px solid #0787ff2c;
+    height: 80px;
+    border-right: 1px solid #0787ff2c;
+}
+.ets{
+    border-right: 1px solid #0787ff2c;
+    text-align: center;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+.pun{
+    text-align: center;
+    border-right: 1px solid #0787ff2c;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+.pun-star{
+    color: #0061bd;
+    font-size: 35px;
+    
+}
+.btn-conperf{
+    width: 90%;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.btn-con{
+    background-color: #0061bd;
+    border: 2px solid #044d92;
+}
+.btn-perf{
+    margin-top: 3.5px;
+    background-color: #0787ffa6;
+    border: 2px solid #044d92;
+}
+.btn-con:hover{
+    background-color: #0271d8;
+}
+.btn-perf:hover{
+    background-color: #0073dfd3;
+}
+.btns{
+text-align: center;
+}
+.etiquetes-selector{
+    background-color: white;
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #0787ff2c;
+    
+}
+.alert{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+@media only screen and (max-width: 992px){
+    .btns{
+        margin-top: 8px;
+        margin-bottom: 10px;
+        border-top: 1px solid #0787ff2c;
+        padding-top: 5px;
+    }
+    .pun{
+        margin-top: 8px;
+        border-top: 1px solid #0787ff2c;
+        padding-top: 5px;
+        margin-bottom: 5px;
+
+
+    }
+}
+@media only screen and (max-width: 768px){
+    .ets{
+        margin-top: 8px;
+        margin-bottom: 5px;
+        border-top: 1px solid #0787ff2c;
+        padding-top: 5px;
+
+    }
+}

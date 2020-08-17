@@ -1,0 +1,133 @@
+
+h1{
+    text-align: center;
+    background-color: #0787ffa6;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.filtre-button{
+    padding: 5px 25px;
+    color: white;
+    background-color: #0787ffa6;
+    border: 2px solid #044d92;
+    
+    
+}
+.filtre-button:hover{
+    background-color: #0073dfd3;
+}
+.assessor{
+    margin: auto;
+    background-color: white;
+    border: 1px solid #0787ff2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    
+}
+.img-perf{
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #0787ff2c;
+}
+.usu-data{
+    text-align: center !important;
+    padding: 0px;
+    
+}
+.data{
+    text-align: center;
+    border-right: 1px solid #0787ff2c;
+    border-left: 1px solid #0787ff2c;
+    height: 80px;
+    padding-top: 15px;
+}
+.tar{
+    height: 80px;
+    border-right: 1px solid #0787ff2c;
+    padding-top: 12px;
+}
+.dades{
+    text-align: center;
+    border-right: 1px solid #0787ff2c;
+    height: 80px;
+    padding-top: 12px;
+}
+.btn-conperf{
+    width: 90%;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.btn-con{
+    background-color: #0061bd;
+    border: 2px solid #044d92;
+}
+.btn-perf{
+    margin-top: 3.5px;
+    background-color: #0787ffa6;
+    border: 2px solid #044d92;
+}
+.btn-con:hover{
+    background-color: #0271d8;
+}
+.btn-perf:hover{
+    background-color: #0073dfd3;
+}
+.btns{
+text-align: center;
+}
+
+@media only screen and (max-width: 960px){
+    .btns{
+        padding-top: 5px;
+        height: 80px;
+        border-top: 1px solid #0787ff2c;
+    }
+    .dades{
+        height: 80px;
+        border-top: 1px solid #0787ff2c;
+    }
+}
+@media only screen and (min-width: 1200px){
+    .assessor{
+        width: 90%;
+    }
+    h1{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 960px){
+    .tar{
+        border-top: 1px solid #0787ff2c;
+    }
+    .data{
+        border-right: 0px solid #0787ff2c;
+    }
+    .dades{
+        border-right: 0px solid #0787ff2c;
+    }
+}
+@media only screen and (max-width: 720px){
+    .tar{
+        border-top: 1px solid #0787ff2c;
+        border-right: 0px solid #0787ff2c;
+    }
+    .data{
+        border-left: 0px solid #0787ff2c;
+        border-top: 1px solid #0787ff2c;
+    }
+    .dades{
+        border-right: 0px solid #0787ff2c;
+    }
+}
