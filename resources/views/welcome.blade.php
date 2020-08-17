@@ -89,5 +89,4 @@
         margin: auto;
         padding-bottom: 100px;
     }
-    .
 </style>
