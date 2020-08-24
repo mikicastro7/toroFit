@@ -68,8 +68,8 @@ Route::get('/cliHistorial', 'AssessoriaController@cliHistorial');
 
 //files
 Route::get('/progress/{file}','FileController@getImage')->middleware('fileAcces');
-Route::get('/descarregarRutina/{file}', 'FileController@getRutina');
-Route::get('/descarregarDieta/{file}', 'FileController@getDieta');
+Route::get('/descarregarRutina/{file}', 'FileController@getRutina')->middleware('fileAcces');
+Route::get('/descarregarDieta/{file}', 'FileController@getDieta')->middleware('fileAcces');
 
 
 Auth::routes();
