@@ -7,7 +7,7 @@
     @foreach ($asse as $ass)
     <div class='assessor row'>
         <div class='usu-data col-lg-2 col-md-2 col-sm-6 col-xs-12'>
-            <img class='img-perf' src="/storage/perfil_image/{{$ass->user->perfil_image}}" alt="">
+            <img class='img-perf' src="{{ url('/perf_image/'.$ass->user->perfil_image) }}" alt="">
             <br>
             <span class='us-name'>{{$ass->user->name}}</span>
         </div>

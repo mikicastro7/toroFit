@@ -62,7 +62,7 @@
     
     <div class="row justify-content-center">
       <div class="form-group col-xs-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
-        <img class='img-perf' src="/storage/perfil_image/{{$user->perfil_image}}" alt="">
+        <img class='img-perf' src="{{ url('/perf_image/'.$user->perfil_image) }}">
       </div>
     </div>
     <div class="row justify-content-center">

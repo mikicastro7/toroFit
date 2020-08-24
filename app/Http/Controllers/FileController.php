@@ -35,6 +35,12 @@ class FileController extends Controller
         return Response::download($path, $filename);
         }
     }
- 
+    public function getPerfImage($filename) {
+        $path = '../storage/app/public/perfil_image/'.$filename;
+        $type = "image/jpeg";
+        header('Content-Type:'.$type);
+        readfile($path);
+        
+    }
 
 }

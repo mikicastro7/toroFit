@@ -70,7 +70,7 @@ Route::get('/cliHistorial', 'AssessoriaController@cliHistorial');
 Route::get('/progress/{file}','FileController@getImage')->middleware('fileAcces');
 Route::get('/descarregarRutina/{file}', 'FileController@getRutina')->middleware('fileAcces');
 Route::get('/descarregarDieta/{file}', 'FileController@getDieta')->middleware('fileAcces');
-
+Route::get('/perf_image/{file}', 'FileController@getperfImage');
 
 Auth::routes();
 
