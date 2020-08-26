@@ -3,6 +3,7 @@
 @section('content')
 <div class="full-container">
     <h1 style="text-align: center; margin-top: 20px">Toro fit assessorias</h1>
+    <h2>Provaaaaaaaaaaaaaa</h2>
     <!--<img class="center" src="{{ URL::to('/') }}/images/logonoback.png"> -->
     <div id="carouselExampleIndicators" class="carousel slide caro" data-ride="carousel">
         <ol class="carousel-indicators">
