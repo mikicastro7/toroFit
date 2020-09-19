@@ -9,7 +9,7 @@
     <div class='assessors'>
         @if($users == "[]")
         <h4 style="text-align: center; margin-top:70px">No s'han trobat assessors que coincideixin amb els paràmetres
-            </h6>
+            </h4>
             @endif
             @foreach ($users as $ass)
             @if (isset($ass->assessor))

@@ -40,7 +40,6 @@ class ContractarController extends Controller
         $tar = Tarifa::where('id', $request->route('id'))->first();
         $request->session()->put('tarifa', $tar);
         //dd($tar->assessors->user);
-        Log::debug($request->session()->get('tarifa'));
 
         return view('resumContr')->with(array('tar' => $tar));
     }
@@ -56,7 +55,6 @@ class ContractarController extends Controller
     
     public function postPayment(Request $request){
         $tar = $request->session()->get('tarifa');
-        log::debug($tar);
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
         $subtotal = $tar->price;
@@ -112,7 +110,6 @@ class ContractarController extends Controller
             $request->session()->put('paypal_payment_id', $payment->getId());
             if(isset($redirect_url)) {
                 // redirect to paypal
-                \Log::debug($redirect_url);
                 return \Redirect::away($redirect_url);
             }
     
@@ -123,7 +120,6 @@ class ContractarController extends Controller
 
         public function getPaymentStatus(Request $request)
 		{
-            Log::debug("hola");
 			// Get the payment ID before session clear
 			$payment_id = \Session::get('paypal_payment_id');
 			// clear the session payment ID

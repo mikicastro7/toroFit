@@ -66,6 +66,10 @@ Route::put('/assAssessoria/entrarDades/edit/{id}', 'AssessoriaController@assAsse
 Route::get('/cliHistorial/{id}', 'AssessoriaController@cliHistorial')->middleware('AssessorGetHistory');
 Route::get('/cliHistorial', 'AssessoriaController@cliHistorial');
 
+//Puntuacións i comentaris client
+Route::get('/cliAssessoria/rating', 'AssessoriaController@cliAssessoriaRating');
+Route::post('/cliAssessoria/rating/editar', 'AssessoriaController@cliAssessoriaRatingEdit');
+
 //files
 Route::get('/progress/{file}','FileController@getImage')->middleware('fileAcces');
 Route::get('/descarregarRutina/{file}', 'FileController@getRutina');

@@ -4,8 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Assessoria;
+use App\Assessor;
+use App\Rating;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+
+
 class AssessoriaController extends Controller
 {
     public function __construct()
@@ -126,4 +131,85 @@ class AssessoriaController extends Controller
         $asse->load('assessor.user');
         return view('assessoria.asseCliHistorial', compact('asse'));
     }
+
+    public function cliAssessoriaRating(){
+
+        $assessoria = Assessoria::where('data_inici', '>=', Carbon::now()->subMonth(1))
+            ->whereDate('data_fi', '<=', Carbon::now()->addMonths(1))
+            ->where('user_id', '=',auth()->user()->id)
+            ->orderBy('data_inici', 'ASC')
+            ->with('user', 'assessor')->first();
+        $rating = 0;
+        $ratingObj = Rating::where('assessor_id', '=', $assessoria->assessor_id )
+            ->where('user_id', '=',auth()->user()->id)
+            ->first();
+        if (is_Object($ratingObj)){
+            $rating = $ratingObj->rating;
+        }
+        
+        /*$sum = 0;
+        $i = 0;
+        foreach($ratings as $rating){
+            $sum += $rating->rating;
+            $i++;
+        }*/
+       // $mitjana = round($sum / $i, 2);
+        $assessor = Assessor::where('id', '=', $assessoria->assessor_id )->first();
+
+        return view('assessoria.cliRating')->with(array( 'assessor' => $assessor, 'rating' => $rating));
+    }
+    public function cliAssessoriaRatingEdit(Request $request){
+        $assessoria = Assessoria::where('data_inici', '>=', Carbon::now()->subMonth(1))
+            ->whereDate('data_fi', '<=', Carbon::now()->addMonths(1))
+            ->where('user_id', '=',auth()->user()->id)
+            ->orderBy('data_inici', 'ASC')
+            ->with('user', 'assessor')->first();
+        $assessor = Assessor::where('id', '=', $assessoria->assessor_id )->first();
+        $requestRating = array_values($request->rating)[0];
+        $ratingObj = Rating::where('assessor_id', '=', $assessoria->assessor_id )
+            ->where('user_id', '=',auth()->user()->id)
+            ->first();
+
+        if (is_Object($ratingObj)){
+            $ratingObj->rating = $requestRating;
+            $ratingObj->save();
+            $notification = array(
+                'message' => 'Puntuació editada',
+                'alert-type' => 'success'
+            );
+            $allRatingAss = Rating::where('assessor_id', '=', $assessoria->assessor_id )->get();
+            $average = 0;
+            
+            foreach($allRatingAss as $ratings){
+                $average += $ratings->rating;
+            }
+            $assessor->avgRating = $average/count($allRatingAss);
+            $assessor->save();
+        //Log::debug($average/count($allRatingAss));
+        } else{
+            $rating = new Rating;
+            $rating->rating = $requestRating;
+            $rating->assessor_id = $assessoria->assessor_id;
+            $rating->user_id = auth()->user()->id; 
+            $rating->save();
+            $notification = array(
+                'message' => 'Puntuació creada',
+                'alert-type' => 'success'
+            );
+            $allRatingAss = Rating::where('assessor_id', '=', $assessoria->assessor_id )->get();
+            $average = 0;
+            
+            foreach($allRatingAss as $ratings){
+                $average += $ratings->rating;
+            }
+            $assessor->avgRating = $average/count($allRatingAss);
+            $assessor->save();
+        }
+
+        return response()->json([
+            'notification' => $notification,
+        ]);
+        
+    }
+
 }

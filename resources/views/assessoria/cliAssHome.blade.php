@@ -14,6 +14,12 @@
                 <i class="fa icona fa-history" aria-hidden="true"></i>
                 <h3>Progress i historial</h3>
             </a>
+
+            <a class="img-container col-md-5 col-sm-12" href="/cliAssessoria/rating">
+                <i class="fa icona fa-history" aria-hidden="true"></i>
+                <h3>Puntuacións i comentaris</h3>
+            </a>
+
     </div>
 </div>
 @include('includes.footer')
@@ -32,7 +38,7 @@
         border: 1px solid #0787ff2c;
     }
     .img-container:hover{
-        border: 4px solid #0787ff2c;
+        border: 1px solid black;
     }
     .icona{
         color: #009de5;
